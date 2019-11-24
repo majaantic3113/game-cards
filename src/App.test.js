@@ -24,6 +24,16 @@ describe('Test App component', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should render loading state', () => {
+    const { container } = render(
+      <Provider store={store}>
+        <App numberOfPlayers={2} loading={true} />
+      </Provider>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
 
 describe('mapStateToProps', () => {

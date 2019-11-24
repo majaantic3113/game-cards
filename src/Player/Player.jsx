@@ -16,20 +16,21 @@ export const Player = ({
 }) => {
   return (
     <div>
-      {player.cards.map(card => (
-        <img
-          data-testid={card.code}
-          onClick={() => {
-            if (!moveInProgress) {
-              throwCards({ user: 'player1', card: card }, numberOfPlayers);
-            }
-          }}
-          className="card-image"
-          key={card.code}
-          src={card.image}
-          alt={card.code}
-        />
-      ))}
+      {player &&
+        player.cards.map(card => (
+          <img
+            data-testid={card.code}
+            onClick={() => {
+              if (!moveInProgress) {
+                throwCards({ user: 'player1', card: card }, numberOfPlayers);
+              }
+            }}
+            className="card-image"
+            key={card.code}
+            src={card.image}
+            alt={card.code}
+          />
+        ))}
     </div>
   );
 };

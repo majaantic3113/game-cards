@@ -30,3 +30,21 @@ exports[`Test App component should render correctly 1`] = `
   </button>
 </div>
 `;
+
+exports[`Test App component should render correctly 2`] = `
+<div
+  class="game"
+>
+  <div />
+  <div />
+  <div />
+</div>
+`;
+
+exports[`Test App component should render loading state 1`] = `
+<div
+  class="game"
+>
+  loading
+</div>
+`;
