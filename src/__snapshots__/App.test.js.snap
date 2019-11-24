@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App component should render correctly 1`] = `
+<div
+  class="game"
+>
+  <h1>
+    Select number of players
+  </h1>
+  <button
+    class="button"
+  >
+    2
+     players
+  </button>
+  <button
+    class="button"
+  >
+    3
+     players
+  </button>
+  <button
+    class="button"
+  >
+    4
+     players
+  </button>
+</div>
+`;
