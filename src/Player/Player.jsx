@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Player.css';
+import { throwCards } from '../store/actions/game.actions';
 import {
-  getUserPlayerCards,
   getMoveInProgress,
   getNumberOfPlayers,
-} from '../store/reducers/game.reducer';
-import { throwCards } from '../store/actions/game.actions';
+  getUserPlayerCards,
+} from '../store/selectors/selectors';
 
 const Player = ({ player, throwCards, moveInProgress, numberOfPlayers }) => {
   return (

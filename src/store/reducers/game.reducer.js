@@ -1,5 +1,3 @@
-import { createSelector } from 'reselect';
-
 import {
   SET_NUMBERS_OF_PLAYERS,
   FETCH_CARDS_START,
@@ -11,6 +9,8 @@ import {
   CALCULATE_SCORE,
   CLEANUP_BOARD,
 } from '../actions/game.actions';
+import { findGreatestCard, chunkArray, getWinner } from '../../util/util';
+import { CARD_VALUES, NUMBER_OF_CARDS_PER_PLAYER } from '../../config';
 
 export const initialState = {
   numberOfPlayers: 0,
@@ -22,72 +22,6 @@ export const initialState = {
   moveInProgress: false,
   roundWinnerCard: null,
   gameWinner: null,
-};
-
-const NUMBER_OF_CARDS_PER_PLAYER = 10;
-
-const CARD_VALUES = {
-  ACE: 1,
-  '2': 2,
-  '3': 3,
-  '4': 4,
-  '5': 5,
-  '6': 6,
-  '7': 7,
-  '8': 8,
-  '9': 9,
-  '10': 10,
-  JACK: 12,
-  QUEEN: 13,
-  KING: 14,
-};
-
-// helpers
-export const chunkArray = (myArray, chunk_size) => {
-  const tempArray = [];
-
-  for (let index = 0; index < myArray.length; index += chunk_size) {
-    tempArray.push(myArray.slice(index, index + chunk_size));
-  }
-
-  return tempArray;
-};
-
-export const findGreatestCard = cards => {
-  let max = cards[0];
-
-  const checkPlayers = (element, max) => {
-    const elemUser = element.user;
-    const maxUser = max.user;
-
-    return +elemUser.substr(-1) > +maxUser.substr(-1) ? element : max;
-  };
-
-  cards.forEach(element => {
-    const currCardValue = CARD_VALUES[element.card.value];
-
-    if (currCardValue > CARD_VALUES[max.card.value]) {
-      max = element;
-    }
-    if (currCardValue === CARD_VALUES[max.card.value]) {
-      max = checkPlayers(element, max);
-    }
-  });
-
-  return max;
-};
-
-export const getWinner = players => {
-  let winner = null;
-  let max = 0;
-
-  for (const player in players) {
-    if (!winner || players[player].score > max) {
-      winner = player;
-      max = players[player].score;
-    }
-  }
-  return winner;
 };
 
 /**
@@ -177,6 +111,7 @@ export const gameReducer = (state = initialState, action) => {
         moveInProgress: true,
       };
     case FIND_ROUND_WINNER:
+      console.log(state.cardsOnTable);
       const roundWinnerCard = findGreatestCard(state.cardsOnTable);
 
       return {
@@ -218,63 +153,3 @@ export const gameReducer = (state = initialState, action) => {
 };
 
 export default gameReducer;
-
-/**
- * Selects game parte of the state
- * @param state
- */
-export const getGameState = state => state.game;
-
-/**
- * Selects number of players part of state
- * @param state
- */
-export const getNumberOfPlayers = createSelector(
-  getGameState,
-  gameState => gameState.numberOfPlayers,
-);
-
-/**
- * Selects loading part of state
- * @param state
- */
-export const getLoadingState = createSelector(
-  getGameState,
-  gameState => gameState.loading,
-);
-
-/**
- * Selects loading part of state
- * @param state
- */
-export const getUserPlayerCards = createSelector(
-  getGameState,
-  gameState => gameState.players['player1'],
-);
-
-/**
- * Selects cardsOnTable part of state
- * @param state
- */
-export const getCardsOnTable = createSelector(
-  getGameState,
-  gameState => gameState.cardsOnTable,
-);
-
-/**
- * Selects moveInProgress part of state
- * @param state
- */
-export const getMoveInProgress = createSelector(
-  getGameState,
-  gameState => gameState.moveInProgress,
-);
-
-/**
- * Selects roundWinnerCard part of state
- * @param state
- */
-export const getRoundWinnerCard = createSelector(
-  getGameState,
-  gameState => gameState.roundWinnerCard,
-);

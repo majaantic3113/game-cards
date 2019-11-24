@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   getNumberOfPlayers,
   getLoadingState,
-} from './store/reducers/game.reducer';
+} from './store/selectors/selectors';
 import './App.css';
 import GameIntro from './GameIntro/GameIntro';
 import Player from './Player/Player';
@@ -22,7 +22,7 @@ export const App = ({ numberOfPlayers, loading }) => {
             <Board />
             <Player />
             {[...Array(numberOfPlayers - 1)].map((e, i) => (
-              <ComputerPlayer player={`player${i + 2}`} />
+              <ComputerPlayer key={i} player={`player${i + 2}`} />
             ))}
           </>
         )

@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './Board.css';
+
 import {
   getCardsOnTable,
   getRoundWinnerCard,
-} from '../store/reducers/game.reducer';
+} from '../store/selectors/selectors';
 
 const Board = ({ cardsOnTable, roundWinnerCard }) => {
   return (
