@@ -14,7 +14,7 @@ export const CLEANUP_BOARD = 'Clean up board';
 /**
  * Returns an action for fetching CARDS
  */
-const fetchCardsStart = () => ({ type: FETCH_CARDS_START });
+export const fetchCardsStart = () => ({ type: FETCH_CARDS_START });
 
 /**
  * Returns an action with CARDS data
@@ -69,28 +69,30 @@ export const setNumberOfPlayers = payload => ({
   payload,
 });
 
+export const throwCardsSimulation = (numberOfPlayers, dispatch) => {
+  return new Promise(resolve => {
+    for (let index = 1; index < numberOfPlayers; index++) {
+      setTimeout(() => {
+        dispatch(throwCardComputer(`player${index + 1}`));
+      }, 500 * index);
+    }
+    setTimeout(resolve, 500 * numberOfPlayers);
+  });
+};
+
+export const cleanupBoardCallback = dispatch => {
+  dispatch(cleanupBoard());
+};
+
 export const throwCards = (userMove, numberOfPlayers) => {
   return async dispatch => {
     dispatch(throwCardPlayer(userMove));
 
-    const throwCardsSimulation = () => {
-      return new Promise(resolve => {
-        for (let index = 1; index < numberOfPlayers; index++) {
-          setTimeout(() => {
-            dispatch(throwCardComputer(`player${index + 1}`));
-          }, 500 * index);
-        }
-        setTimeout(resolve, 500 * numberOfPlayers);
-      });
-    };
-
-    await throwCardsSimulation();
+    await throwCardsSimulation(numberOfPlayers, dispatch);
     dispatch(findRoundWinner());
     dispatch(calculateScore());
 
-    setTimeout(() => {
-      dispatch(cleanupBoard());
-    }, 1500);
+    setTimeout(cleanupBoardCallback.bind(null, dispatch), 1500);
   };
 };
 

@@ -111,7 +111,6 @@ export const gameReducer = (state = initialState, action) => {
         moveInProgress: true,
       };
     case FIND_ROUND_WINNER:
-      console.log(state.cardsOnTable);
       const roundWinnerCard = findGreatestCard(state.cardsOnTable);
 
       return {
