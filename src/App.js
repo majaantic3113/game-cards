@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
 
-function App() {
+import {
+  getNumberOfPlayers,
+  getLoadingState,
+} from './store/reducers/game.reducer';
+import './App.css';
+import GameIntro from './GameIntro/GameIntro';
+import Player from './Player/Player';
+import Board from './Board/Board';
+import ComputerPlayer from './ComputerPlayer/ComputerPlayer';
+
+export const App = ({ numberOfPlayers, loading }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="game">
+      {numberOfPlayers ? (
+        loading ? (
+          'loading'
+        ) : (
+          <>
+            <Board />
+            <Player />
+            {[...Array(numberOfPlayers - 1)].map((e, i) => (
+              <ComputerPlayer player={`player${i + 2}`} />
+            ))}
+          </>
+        )
+      ) : (
+        <GameIntro />
+      )}
     </div>
   );
-}
+};
 
-export default App;
+export const mapStateToProps = state => ({
+  numberOfPlayers: getNumberOfPlayers(state),
+  loading: getLoadingState(state),
+  state: state,
+});
+
+export default connect(mapStateToProps)(App);

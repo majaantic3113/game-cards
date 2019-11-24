@@ -1,9 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import { App, mapStateToProps } from "./App";
+import { Provider } from "react-redux";
+import store from "./store";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe("Test App component", () => {
+  it("should render correctly", () => {
+    const { container } = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it("should render correctly", () => {
+    const { container } = render(
+      <Provider store={store}>
+        <App numberOfPlayers={2} />
+      </Provider>
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe("mapStateToProps", () => {
+  it("should provide number of players prop", () => {
+    const state = { game: { numberOfPlayers: 2 } };
+
+    expect(mapStateToProps(state)).toHaveProperty("numberOfPlayers");
+  });
 });

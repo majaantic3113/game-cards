@@ -1,0 +1,29 @@
+{
+  "extends": ["plugin:react/recommended"],
+  "parserOptions": {
+    "tsconfigRootDir": "."
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx"],
+      "rules": {
+        "no-magic-numbers": "off",
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "rules": {
+    "template-curly-spacing": ["error", "never"],
+    "comma-dangle": ["error", "only-multiline"],
+    "array-bracket-spacing": ["error", "never"],
+    "arrow-parens": ["warn", "as-needed"],
+    "arrow-body-style": ["error", "as-needed"],
+    "no-magic-numbers": "off",
+    "no-mixed-operators": ["off"]
+  },
+  "settings": {
+    "react": {
+      "version": "16.11.0"
+    }
+  }
+}
