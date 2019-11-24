@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test Board component should render correctly 1`] = `
-<div>
+<div
+  class="board"
+>
   <img
     alt="1"
-    class="board-winner"
+    class="board-image board-winner"
     src="1"
   />
   <img
     alt="2"
-    class=""
+    class="board-image"
     src="2"
   />
 </div>

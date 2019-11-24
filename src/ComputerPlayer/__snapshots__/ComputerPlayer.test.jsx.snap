@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ComputerPlayer component should render correctly 1`] = `
+<div
+  class="computer-player computer-player2"
+>
+  <div
+    class="computer-player-score"
+  >
+    Player 
+    2
+    : 
+    0
+  </div>
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+  <img
+    alt="background"
+    class="computer-player-img"
+    src="card-background.png"
+  />
+</div>
+`;

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test GameIntro component should render correctly 1`] = `
-<h1>
+<h1
+  class="title"
+>
   Select number of players
 </h1>
 `;

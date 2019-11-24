@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test Player component should render correctly 1`] = `
-<div>
+<div
+  class="player"
+>
+  <span
+    class="player-score"
+  >
+    Player 1: 
+  </span>
   <img
     alt="code"
     class="card-image"

@@ -4,7 +4,9 @@ exports[`Test App component should render correctly 1`] = `
 <div
   class="game"
 >
-  <h1>
+  <h1
+    class="title"
+  >
     Select number of players
   </h1>
   <button
@@ -35,9 +37,38 @@ exports[`Test App component should render correctly 2`] = `
 <div
   class="game"
 >
-  <div />
-  <div />
-  <div />
+  <div
+    class="game-board"
+  >
+    <div
+      class="board"
+    />
+    <div
+      class="player"
+    >
+      <span
+        class="player-score"
+      >
+        Player 1: 
+      </span>
+    </div>
+    <div
+      class="computer-player computer-player2"
+    >
+      <div
+        class="computer-player-score"
+      >
+        Player 
+        2
+        : 
+      </div>
+      <img
+        alt="background"
+        class="computer-player-img"
+        src="card-background.png"
+      />
+    </div>
+  </div>
 </div>
 `;
 

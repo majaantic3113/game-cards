@@ -2,10 +2,7 @@ import {
   getGameState,
   getNumberOfPlayers,
   getLoadingState,
-  getUserPlayerCards,
-  getCardsOnTable,
   getMoveInProgress,
-  getRoundWinnerCard,
 } from './selectors';
 
 describe('selectors test', () => {

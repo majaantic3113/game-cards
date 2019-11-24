@@ -58,3 +58,12 @@ export const getRoundWinnerCard = createSelector(
   getGameState,
   gameState => gameState.roundWinnerCard,
 );
+
+/**
+ * Selects gameWinner part of state
+ * @param state
+ */
+export const getGameWinner = createSelector(
+  getGameState,
+  gameState => gameState.gameWinner,
+);

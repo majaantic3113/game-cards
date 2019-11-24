@@ -16,6 +16,7 @@ export const Player = ({
 }) => {
   return (
     <div className="player">
+      <span className="player-score">Player 1: {player && player.score}</span>
       {player &&
         player.cards.map(card => (
           <img
