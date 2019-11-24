@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Player component should render correctly 1`] = `
+<div>
+  <img
+    alt="code"
+    class="card-image"
+    data-testid="code"
+    src="image"
+  />
+  <img
+    alt="code2"
+    class="card-image"
+    data-testid="code2"
+    src="image2"
+  />
+</div>
+`;

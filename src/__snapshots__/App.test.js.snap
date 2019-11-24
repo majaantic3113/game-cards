@@ -9,18 +9,21 @@ exports[`Test App component should render correctly 1`] = `
   </h1>
   <button
     class="button"
+    data-testid="game-intro-button-2"
   >
     2
      players
   </button>
   <button
     class="button"
+    data-testid="game-intro-button-3"
   >
     3
      players
   </button>
   <button
     class="button"
+    data-testid="game-intro-button-4"
   >
     4
      players

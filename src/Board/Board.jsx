@@ -8,7 +8,7 @@ import {
   getRoundWinnerCard,
 } from '../store/selectors/selectors';
 
-const Board = ({ cardsOnTable, roundWinnerCard }) => {
+export const Board = ({ cardsOnTable, roundWinnerCard }) => {
   return (
     <div>
       {cardsOnTable.map(card => {

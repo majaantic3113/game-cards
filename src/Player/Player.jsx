@@ -8,16 +8,21 @@ import {
   getUserPlayerCards,
 } from '../store/selectors/selectors';
 
-const Player = ({ player, throwCards, moveInProgress, numberOfPlayers }) => {
+export const Player = ({
+  player,
+  throwCards,
+  moveInProgress,
+  numberOfPlayers,
+}) => {
   return (
     <div>
       {player.cards.map(card => (
         <img
+          data-testid={card.code}
           onClick={() => {
-            if (moveInProgress) {
-              return;
+            if (!moveInProgress) {
+              throwCards({ user: 'player1', card: card }, numberOfPlayers);
             }
-            throwCards({ user: 'player1', card: card }, numberOfPlayers);
           }}
           className="card-image"
           key={card.code}

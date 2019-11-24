@@ -10,15 +10,12 @@ export const GameIntro = ({ setNumberOfPlayers, fetchCards }) => {
       <h1>Select number of players</h1>
       {POSSIBLE_NUMBERS.map(elem => (
         <button
+          data-testid={`game-intro-button-${elem}`}
           key={elem}
           className="button"
           onClick={() => {
-            if (setNumberOfPlayers) {
-              setNumberOfPlayers(elem);
-            }
-            if (fetchCards) {
-              fetchCards(elem);
-            }
+            setNumberOfPlayers(elem);
+            fetchCards(elem);
           }}
         >
           {elem} players
