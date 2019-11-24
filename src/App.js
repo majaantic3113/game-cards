@@ -18,13 +18,13 @@ export const App = ({ numberOfPlayers, loading }) => {
         loading ? (
           'loading'
         ) : (
-          <>
+          <div className="game-board">
             <Board />
             <Player />
             {[...Array(numberOfPlayers - 1)].map((e, i) => (
               <ComputerPlayer key={i} player={`player${i + 2}`} />
             ))}
-          </>
+          </div>
         )
       ) : (
         <GameIntro />

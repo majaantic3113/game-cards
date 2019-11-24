@@ -1,4 +1,44 @@
+.board {
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-image {
+  width: 120px;
+  height: auto;
+  margin: 0 3px;
+  border: 2px solid transparent;
+}
+
 .board-winner {
   border: 2px solid red;
   border-radius: 2px;
+}
+
+@media only screen and (max-width: 850px) {
+  .board-image {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .board-image {
+    width: 70px;
+    margin: 0 2px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .board {
+    height: 30%;
+    flex-wrap: wrap;
+  }
+
+  .board-image {
+    width: 45px;
+    margin: 0 2px;
+  }
 }

@@ -7,7 +7,7 @@ export const GameIntro = ({ setNumberOfPlayers, fetchCards }) => {
   const POSSIBLE_NUMBERS = [2, 3, 4];
   return (
     <>
-      <h1>Select number of players</h1>
+      <h1 className="title">Select number of players</h1>
       {POSSIBLE_NUMBERS.map(elem => (
         <button
           data-testid={`game-intro-button-${elem}`}

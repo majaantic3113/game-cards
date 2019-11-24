@@ -10,9 +10,9 @@ import {
 
 export const Board = ({ cardsOnTable, roundWinnerCard }) => {
   return (
-    <div>
+    <div className="board">
       {cardsOnTable.map(card => {
-        const winnerStyle = 'board-winner';
+        const winnerStyle = 'board-image board-winner';
         if (roundWinnerCard && roundWinnerCard.user === card.user) {
         }
         return (
@@ -20,7 +20,7 @@ export const Board = ({ cardsOnTable, roundWinnerCard }) => {
             className={
               roundWinnerCard && roundWinnerCard.user === card.user
                 ? winnerStyle
-                : ''
+                : 'board-image'
             }
             src={card.card.image}
             key={card.card.code}
