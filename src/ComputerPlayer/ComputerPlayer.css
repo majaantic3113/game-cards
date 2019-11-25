@@ -69,6 +69,22 @@
     transform: rotate(90deg);
   }
 
+  .computer-player2 .computer-player-score,
+  .computer-player4 .computer-player-score {
+    position: absolute;
+    top: -75px;
+    width: 100%;
+  }
+
+  .computer-player2 .computer-player-score {
+    left: 150px;
+  }
+
+  .computer-player4 .computer-player-score {
+    right: 150px;
+    text-align: right;
+  }
+
   .computer-player2 .computer-player-img:first-child {
     margin-left: 40px;
   }
@@ -92,6 +108,19 @@
     margin: -100px 40px 0 40px;
   }
 
+  .computer-player2 .computer-player-score,
+  .computer-player4 .computer-player-score {
+    top: -145px;
+  }
+
+  .computer-player2 .computer-player-score {
+    left: 25px;
+  }
+
+  .computer-player4 .computer-player-score {
+    right: 25px;
+  }
+
   .computer-player4 .computer-player-img:last-child {
     margin-right: 40px;
   }
@@ -111,6 +140,11 @@
   .computer-player2 .computer-player-img,
   .computer-player4 .computer-player-img {
     margin: -50px 10px 0 10px;
+  }
+
+  .computer-player2 .computer-player-score,
+  .computer-player4 .computer-player-score {
+    top: -100px;
   }
 
   .computer-player2 .computer-player-img:first-child {

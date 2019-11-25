@@ -10,13 +10,14 @@ import GameIntro from './GameIntro/GameIntro';
 import Player from './Player/Player';
 import Board from './Board/Board';
 import ComputerPlayer from './ComputerPlayer/ComputerPlayer';
+import loadingGif from './assets/loading.gif';
 
 export const App = ({ numberOfPlayers, loading }) => {
   return (
     <div className="game">
       {numberOfPlayers ? (
         loading ? (
-          'loading'
+          <img src={loadingGif} alt="loading" />
         ) : (
           <div className="game-board">
             <Board />
