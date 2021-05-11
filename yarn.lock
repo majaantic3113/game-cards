@@ -4733,9 +4733,9 @@ hoist-non-react-statics@^3.3.0:
     react-is "^16.7.0"
 
 hosted-git-info@^2.1.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
-  integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -10057,11 +10057,6 @@ w3c-xmlserializer@^1.1.2:
     domexception "^1.0.1"
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
-
-waait@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/waait/-/waait-1.0.5.tgz#6a3c7aaa88bd0a1a545e9d47890b9595bebf9aa7"
-  integrity sha512-wp+unA4CpqxvBUKHHv8D86fK4jWByHAWyhEXXVHfVUZfK+16ylpj7hjQ58Z8j9ntu8XNukRQT8Fi5qbyJ8rkyw==
 
 wait-for-expect@^3.0.0:
   version "3.0.1"
